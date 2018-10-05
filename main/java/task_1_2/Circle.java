@@ -1,4 +1,4 @@
-package my_package;
+package task_1_2;
 
 public class Circle {
     public static final double pi = 3.14;

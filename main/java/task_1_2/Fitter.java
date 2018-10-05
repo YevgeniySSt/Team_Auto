@@ -1,7 +1,7 @@
-package my_package;
+package task_1_2;
 
 public class Fitter {
-    public static boolean doesCircleFitSquare(double areaOfACircle, double areaOfASquare) {
+    public static boolean isCircleFittedSquare(double areaOfACircle, double areaOfASquare) {
         double diameter = 2 * Math.sqrt(areaOfACircle / Circle.pi);
         double side = Math.sqrt(areaOfASquare);
         if (diameter <= side) {
@@ -10,7 +10,7 @@ public class Fitter {
 
     }
 
-    public static boolean doesSquareFitCircle(double areaOfASquare, double areaOfACircle) {
+    public static boolean isSquareFittedCircle(double areaOfASquare, double areaOfACircle) {
         double diagonal = Math.sqrt(2) * Math.sqrt(areaOfASquare);
         double diameter = 2 * Math.sqrt(areaOfACircle / Circle.pi);
         if (diagonal <= diameter) {

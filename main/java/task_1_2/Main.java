@@ -1,7 +1,4 @@
-package my_test_package;
-
-import my_package.AreaCalculator;
-import my_package.Fitter;
+package task_1_2;
 
 import java.io.IOException;
 
@@ -21,8 +18,8 @@ public class Main {
 
         // Task 2
 
-        boolean circleFitsSquare = Fitter.doesCircleFitSquare(areaOfACircle, areaOfASquare);
-        boolean squareFitsCircle = Fitter.doesSquareFitCircle(areaOfASquare, areaOfACircle);
+        boolean circleFitsSquare = Fitter.isCircleFittedSquare(areaOfACircle, areaOfASquare);
+        boolean squareFitsCircle = Fitter.isSquareFittedCircle(areaOfASquare, areaOfACircle);
 
         if (circleFitsSquare) {
             System.out.println("Circle fits square");

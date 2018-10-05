@@ -1,4 +1,6 @@
-package my_package;
+package task_1_2;
+
+import Utils.Reader;
 
 import java.io.IOException;
 
