@@ -69,7 +69,7 @@ public class Task5 {
         tasksSorted.addAll(tasksWithMiddlePriority);
         tasksSorted.addAll(tasksWithLowPriority);
 
-        //задачи которые можно выполнить
+        //задачи которые можно выполнить//
         ArrayList<Task> tasksThatCouldBeDone = new ArrayList<Task>();
 
         for (Task task : tasksSorted) {
