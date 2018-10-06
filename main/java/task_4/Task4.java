@@ -11,7 +11,7 @@ public class Task4 {
         String s = Reader.readlineFromConsole();
 
         int length = s.length();
-        char [] chars = new char[length];
+        char[] chars = new char[length];
 
         //creation of arrays of letters
         for (int i = 0; i < length; i++) {
@@ -19,8 +19,8 @@ public class Task4 {
         }
         //comparing letters
         boolean isPalindrome = true;
-        for (int i = 0; i < length/2 ; i++) {
-            if (chars[i]!= chars[length - 1 - i]) {
+        for (int i = 0; i < length / 2; i++) {
+            if (chars[i] != chars[length - 1 - i]) {
                 isPalindrome = false;
                 break;
             }
