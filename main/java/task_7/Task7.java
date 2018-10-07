@@ -25,7 +25,7 @@ public class Task7 {
 
         for (Map.Entry<Integer, Country> set : map.entrySet()) {
             boolean s = set.getValue().isTelenorSupported;
-            if (!s){
+            if (!s) {
                 System.out.println(set.getKey() + " " + set.getValue().name);
             }
         }
