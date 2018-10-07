@@ -14,7 +14,7 @@ public class Shipment {
     }
 
     public void printShipment() {
-        System.out.println("Shipment ID: " + shipmentID + ", adddress: ");
+        System.out.println("Shipment ID: " + shipmentID + ", adddress: " + address);
         if (list == null) {
             System.out.println("no orders");
         } else {
