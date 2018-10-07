@@ -1,8 +1,6 @@
 package Utils;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 
 public class Reader {
 
@@ -11,4 +9,6 @@ public class Reader {
         String line = reader.readLine();
         return line;
     }
+
+
 }

@@ -3,9 +3,6 @@ package task_6;
 import Utils.Reader;
 
 import java.io.IOException;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 public class Task6 {
     public static void main(String[] args) throws IOException, InterruptedException {
