@@ -4,18 +4,25 @@ import Utils.Reader;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Task3 {
     public static void main(String[] args) throws IOException {
-        ArrayList<Integer> arrayList = new ArrayList<Integer>();
+        List<Integer> arrayList = new ArrayList<Integer>();
 
         System.out.println("Введите числа от 20 до 40, чтобы закончить ввод введите run");
-        String s = Reader.readlineFromConsole();
+        String lineFromConsole = Reader.readlineFromConsole();
 
-        while (!s.equals("run")) {
-            int a = Integer.parseInt(s);
+        while (true) {
+            if (lineFromConsole.equals("run")) {
+                if (arrayList.size() < 10) {
+                    System.out.println("введите еще " + (10 - arrayList.size()) + " чисел");
+                    lineFromConsole = Reader.readlineFromConsole();
+                } else break;
+            }
+            int a = Integer.parseInt(lineFromConsole);
             arrayList.add(a);
-            s = Reader.readlineFromConsole();
+            lineFromConsole = Reader.readlineFromConsole();
         }
 
         int sum = 0;
