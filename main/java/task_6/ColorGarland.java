@@ -6,26 +6,30 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class ColorGarland extends Garland {
-    ArrayList<ColorLightBulb> colorLightBulbs = new ArrayList<ColorLightBulb>();
+    ArrayList<ColorLightBulb> lightBulbs = new ArrayList<ColorLightBulb>();
 
-    @Override
-    public void printCondition(int number) {
-        DateFormat dateFormat = new SimpleDateFormat("mm");
-        Date date = new Date();
-        int minute = Integer.parseInt(dateFormat.format(date));
-
-        if (minute % 2 == 0) {
-            for (int i = 0; i < number; i = i + 2) {
-                this.colorLightBulbs.get(i).isOn = true;
-            }
-        } else {
-            for (int i = 1; i < number; i = i + 2) {
-                this.colorLightBulbs.get(i).isOn = true;
+    public ColorGarland(int number) {
+        for (int i = 1; i <= number; i++) {
+            if (i % 4 == 0) {
+                this.lightBulbs.add(new ColorLightBulb(Color.BLUE));
+            } else if (i % 4 > 0 && i % 4 <= 1) {
+                this.lightBulbs.add(new ColorLightBulb(Color.RED));
+            } else if (i % 4 > 1 && i % 4 <= 2) {
+                this.lightBulbs.add(new ColorLightBulb(Color.YELLOW));
+            } else if (i % 4 > 2 && i % 4 <= 3) {
+                this.lightBulbs.add(new ColorLightBulb(Color.GREEN));
+            } else if (i % 4 > 3 && i % 4 <= 4) {
+                this.lightBulbs.add(new ColorLightBulb(Color.BLUE));
             }
         }
-        for (int i = 0; i < number; i++) {
-            boolean status = this.colorLightBulbs.get(i).isOn;
-            System.out.println(this.colorLightBulbs.get(i).color + " лампочка " + (i + 1) + " - " + status);
+        setCondition(lightBulbs);
+    }
+
+    @Override
+    public void printCondition() {
+        for (int i = 0; i < lightBulbs.size(); i++) {
+            boolean status = lightBulbs.get(i).isOn;
+            System.out.println(lightBulbs.get(i).color + " лампочка " + (i + 1) + " - " + status);
         }
     }
 }

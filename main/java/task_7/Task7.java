@@ -20,7 +20,16 @@ public class Task7 {
         }
 
         map.put(i, new Country("Ukraine"));
-        map.get(13).isTelenorSupported = true;
+
+        for (Map.Entry<Integer, Country> set : map.entrySet()) {
+            String s = set.getValue().name;
+            if ((s.equals("Hungary")) || (s.equals("Denmark"))){
+                map.get(set.getKey()).isTelenorSupported = true;
+            }
+
+        }
+
+        map.get(13).isTelenorSupported = true;//find by name
         map.get(7).isTelenorSupported = true;
 
         for (Map.Entry<Integer, Country> set : map.entrySet()) {

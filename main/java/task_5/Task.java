@@ -2,12 +2,13 @@ package task_5;
 
 public class Task {
     String name;
-    String priority;
-    String severity;
+    String priority ;//enum
+    String severity;//enum
     int duration;
 
     public Task(String name, String priority, String severity) {
         this.name = name;
+
         this.priority = priority;
         this.severity = severity;
 

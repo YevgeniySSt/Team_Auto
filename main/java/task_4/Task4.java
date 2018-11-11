@@ -25,11 +25,7 @@ public class Task4 {
                 break;
             }
         }
-        if (isPalindrome)
-            System.out.println("Word is a palindrome");
-        else
-            System.out.println("Word is not a palindrome ");
 
-
-    }
+        System.out.println(isPalindrome ? "Word is a palindrome" : "Word is not a palindrome ");
+        }
 }

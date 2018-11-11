@@ -74,14 +74,11 @@ public class Task5 {
 
         for (Task task : tasksSorted) {
 
-            requiredHours += task.duration;
-            if (requiredHours <= totalHours) {
+            if ((requiredHours + task.duration) <=totalHours){
                 tasksThatCouldBeDone.add(task);
-                continue;
-            } else {
-                requiredHours -= task.duration;
-                continue;
+                requiredHours +=task.duration;
             }
+
         }
         for (Task task : tasksThatCouldBeDone) {
             System.out.println(task.name);
