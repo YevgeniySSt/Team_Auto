@@ -1,20 +1,10 @@
 package tests.calculator;
 
-import Utils.AssertionCheck;
-import org.testng.Assert;
 import org.testng.annotations.*;
 import task_9_Calculator.Calculator;
 
-
-public class CalculatorTests {
-    Calculator calculator;
-    AssertionCheck assertionCheck;
-
-    @BeforeTest
-    public void beforeTest() {
-        calculator = new Calculator();
-        assertionCheck = new AssertionCheck();
-    }
+public class CalculatorTests extends BaseTest {
+    Calculator calculator = new Calculator();
 
     @Test
     public void addTest() {
@@ -40,11 +30,6 @@ public class CalculatorTests {
     public void divideTest() {
         assertionCheck.assertEquals(1.5, calculator.divide(4.5, 3)); //positive test
         assertionCheck.assertEquals(1.4, calculator.divide(4.5, 3)); //negative test
-    }
-
-    @AfterTest
-    public void afterTest() {
-        assertionCheck.printErrors();
     }
 
 
