@@ -3,7 +3,7 @@ package task_9_Calculator;
 public class ScientificCalculator extends Calculator {
 
     public double pow(double a, double b){
-        return Math.pow(a, b);
+        return Math.pow(a, b);//use parent logic
     }
 
     public double sqrt(double a){

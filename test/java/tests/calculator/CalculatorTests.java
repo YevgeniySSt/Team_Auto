@@ -1,35 +1,51 @@
 package tests.calculator;
 
+import org.testng.Assert;
 import org.testng.annotations.*;
 import task_9_Calculator.Calculator;
 
-public class CalculatorTests extends BaseTest {
-    Calculator calculator = new Calculator();
+public class CalculatorTests {
+    Calculator calculator;
 
-    @Test
-    public void addTest() {
-        assertionCheck.assertEquals(15.7, calculator.add(15, 0.7)); //positive test
-        assertionCheck.assertEquals(150.7, calculator.add(149, 0.7)); //negative test
-        assertionCheck.assertEquals(150.8, calculator.add(149, 0.7)); //negative test
-        assertionCheck.assertNotEquals(5, calculator.add(5, 6)); //positive test
+    @DataProvider(name = "Inputs")
+
+    public static Object[][] inputs() {
+
+        return new Object[][]
+                {
+                        { 15.0, 0.7 },
+                        { 149, 0.7 }
+                };
+
+    }
+
+    @BeforeTest
+    public void beforeTest(){
+        calculator = new Calculator();
+    }
+
+    @Test(dataProvider = "Inputs")
+    public void addTest(double firstInput, double secondInput) {
+        Assert.assertEquals(15.7, calculator.add(firstInput, secondInput)); //positive test
+        Assert.assertNotEquals(5, calculator.add(5, 6)); //positive test
     }
 
     @Test
     public void subtractTest() {
-        assertionCheck.assertEquals(5.1, calculator.subtract(18.2, 13.1)); //positive test
-        assertionCheck.assertEquals(5.2, calculator.subtract(18.2, 13.1)); //negative test
+        Assert.assertEquals(5.1, calculator.subtract(18.2, 13.1)); //positive test
+        Assert.assertEquals(5.2, calculator.subtract(18.2, 13.1)); //negative test
     }
 
     @Test
     public void multiplyTest() {
-        assertionCheck.assertEquals(4.5, calculator.multiply(3, 1.5)); //positive test
-        assertionCheck.assertEquals(4.1, calculator.multiply(3, 1.5)); //negative test
+        Assert.assertEquals(4.5, calculator.multiply(3, 1.5)); //positive test
+        Assert.assertEquals(4.1, calculator.multiply(3, 1.5)); //negative test
     }
 
     @Test
     public void divideTest() {
-        assertionCheck.assertEquals(1.5, calculator.divide(4.5, 3)); //positive test
-        assertionCheck.assertEquals(1.4, calculator.divide(4.5, 3)); //negative test
+        Assert.assertEquals(1.5, calculator.divide(4.5, 3)); //positive test
+        Assert.assertEquals(1.4, calculator.divide(4.5, 3)); //negative test
     }
 
 

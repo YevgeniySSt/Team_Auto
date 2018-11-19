@@ -1,39 +1,45 @@
 package tests.calculator;
 
+import org.testng.Assert;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import task_9_Calculator.ScientificCalculator;
 
-public class ScientificCalculatorTests extends BaseTest {
-    ScientificCalculator sCalculator = new ScientificCalculator();
+public class ScientificCalculatorTests {
+    ScientificCalculator calculator;
+    @BeforeTest
+    public void beforeTest(){
+        calculator = new ScientificCalculator();
+    }
 
     @Test
     public void add() {
-        assertionCheck.assertEquals(4.0, sCalculator.add(2.0, 2.0));
-        assertionCheck.assertEquals(4.0, sCalculator.add(3, 2));
+        Assert.assertEquals(4.0, calculator.add(2.0, 2.0));
+        Assert.assertEquals(4.0, calculator.add(3, 2));
     }
 
     @Test
     public void pow() {
-        assertionCheck.assertEquals(49, sCalculator.pow(7, 7));
-        assertionCheck.assertEquals(48, sCalculator.pow(7, 7));
+        Assert.assertEquals(49, calculator.pow(7, 7));
+        Assert.assertEquals(48, calculator.pow(7, 7));
     }
 
     @Test
     public void sqrt() {
-        assertionCheck.assertEquals(7, sCalculator.sqrt(49));
-        assertionCheck.assertEquals(8, sCalculator.sqrt(49));
+        Assert.assertEquals(7, calculator.sqrt(49));
+        Assert.assertEquals(8, calculator.sqrt(49));
     }
 
     @Test
     public void min() {
-        assertionCheck.assertEquals(5.8, sCalculator.min(5.8, 7.9));
-        assertionCheck.assertEquals(7.9, sCalculator.min(5.8, 7.9));
+        Assert.assertEquals(5.8, calculator.min(5.8, 7.9));
+        Assert.assertEquals(7.9, calculator.min(5.8, 7.9));
     }
 
     @Test
     public void max() {
-        assertionCheck.assertEquals(5.8, sCalculator.max(5.8, 7.9));
-        assertionCheck.assertEquals(7.9, sCalculator.max(5.8, 7.9));
+        Assert.assertEquals(5.8, calculator.max(5.8, 7.9));
+        Assert.assertEquals(7.9, calculator.max(5.8, 7.9));
     }
 
 
